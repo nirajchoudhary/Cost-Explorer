@@ -10,7 +10,6 @@ const axiosInstance = Axios.create({
     headers: {
         "Content-Type": "application/json",
         "Pragma": "no-cache",
-        "Access-Control-Allow-Origin": "*"
     }
 });
 

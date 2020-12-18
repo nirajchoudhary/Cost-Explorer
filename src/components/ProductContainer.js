@@ -4,7 +4,7 @@ import React, {useState, useEffect} from "react";
 import {GET_CURRENCY_VALUE} from "../actions/ActionTypes";
 import ProductAction from "../actions/ProductAction";
 import productList from "../utils/Product.json";
-import ProductCard from "./ProductCard";
+import ProductCard from "./ProductComponents/ProductCard";
 
 
 const Product = () => {
@@ -15,20 +15,13 @@ const Product = () => {
         getCurrencyValue();
     }, [currencyType]);
 
-    const getCurrencyValue = async () => {
-        try {
-            const result = await ProductAction({
-                type: GET_CURRENCY_VALUE
-            });
-            if (result) {
-                console.log(result.rates.USD)
-                setDollarValue(result.rates.USD);
-                return true;
-            }
-        } catch (error) {
-            console.log(error);
-        }
-        return false;
+    const getCurrencyValue = () => {
+        ProductAction({type: GET_CURRENCY_VALUE})
+        .then(response => response.json())
+        .then(data => {
+            setDollarValue(data.rates.USD);
+        })
+        .catch(error => console.log(error))
     };
 
     const renderProducts = () => {

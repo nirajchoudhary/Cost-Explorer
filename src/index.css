@@ -16,23 +16,3 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
         monospace;
 }
-
-.bg-f5 {
-    background-color: #F5F5F5;
-}
-
-.bg-f2 {
-    background-color: #F2F2F2;
-}
-
-.bg-d9 {
-    background-color: #D9D9D9;
-}
-
-.modal-header {
-    padding: 8px 16px;
-}
-
-.modal-footer {
-    padding: 4px 16px;
-}

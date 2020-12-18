@@ -3,7 +3,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import {AppRoute} from './routes';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './static/css/index.css';
+import './index.css';
 
 
 render (

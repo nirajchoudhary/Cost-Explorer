@@ -1,6 +1,8 @@
 import React from "react";
 import NumberFormat from 'react-number-format';
 
+import './ProductCard.css';
+
 
 const ProductCard = (props) => {
     const {product, currencyType, dollarValue} = props;
@@ -12,16 +14,13 @@ const ProductCard = (props) => {
         productPrice = product.price * dollarValue;
     }
 
-    // const images = require.context('../static/img', true);
-    // let productImage = images(`./${product.image}`);
-
     return (
         <div className="col-sm-4">
-            <div className="card">
-                <img className="card-img-top" src={product.image} 
-                    alt={product.name} height="280"
+            <div className="card zoom">
+                <img className="card-img-top product-image" 
+                    src={product.image} alt={product.name}
                 />
-                <div className="card-body text-center border-top">
+                <div className="card-body text-center border-top bg-light p-3">
                     <div className="card-title">
                         <h5>{product.name}</h5>
                     </div>
